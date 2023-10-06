@@ -9,6 +9,9 @@ En la UTNG, un ciberataque devastador pone en riesgo a los estudiantes y sus dat
 ## Público objetivo
 •	Jugadores de 13 a 35 años: Debido a su temática tecnológica y desafíos cibernéticos, el juego atraería a un público joven adolescente y joven adulto que tenga afinidad por la tecnología y los videojuegos.
 
+## Clasificación
+•	TEEN (T).
+
 ## Enlace en Jira
 https://bytebattles.atlassian.net/jira/software/projects/SCRUM/boards/1
 
