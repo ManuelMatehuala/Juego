@@ -1,6 +1,6 @@
 # Repositorio Proyecto Byte Battles
 
-# Descripción 
+## Descripción 
 En la UTNG, un ciberataque devastador pone en riesgo a los estudiantes y sus datos. Un héroe anónimo se enfrenta valientemente a la amenaza, adentrándose en el mundo digital y aprendiendo de sus enemigos para desactivarlos. Establece metas para mejorar sus habilidades y, tras superar desafíos, derrota a los atacantes, restableciendo la paz en la universidad y salvando a los alumnos atrapados.
 
 ## Género
