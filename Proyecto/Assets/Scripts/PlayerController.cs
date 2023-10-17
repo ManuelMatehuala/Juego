@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Jugador control")]
     public float moveSpeed;
+    public float jumpPower;
+    private bool canJump;
+    public Transform groundCheckPoint;
+    public LayerMask whatIsGround;
 
     [Header("Cámara control")]
     public float mouseSensitivity;
@@ -53,6 +57,12 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded)
         {
             moveInput.y = Physics.gravity.y * gravityModifier * Time.deltaTime;
+        }
+
+        //Salto del Jugador
+        if(Input.GetButtonDown("Jump"))
+        {
+            moveInput.y = jumpPower;
         }
 
         characterController.Move(moveInput * Time.deltaTime);
