@@ -26800,6 +26800,11 @@ MonoBehaviour:
   camTrans: {fileID: 132178512}
   gravityModifier: 2
   moveSpeed: 8
+  jumpPower: 7
+  groundCheckPoint: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
   mouseSensitivity: 1
   invertX: 0
   invertY: 0
