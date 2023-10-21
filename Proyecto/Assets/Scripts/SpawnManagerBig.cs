@@ -10,7 +10,8 @@ public class SpawnManager : MonoBehaviour
     private float spawnPosZmax = -12;
     private float spawnPosZmin = -8;
     private float startDelay = 3;
-    private float spawnInterval = 1.5f;
+    private float spawnInterval = 3f;
+    private int enemyTotal = 0;
     //public int animalIndex
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,12 @@ public class SpawnManager : MonoBehaviour
     }
     void SpawnRandomEnemy()
     {
-        int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-        Vector3 spawnPost = new Vector3(Random.Range(spawnRangeXmin, spawnRangeXmax), Random.Range(3,4), Random.Range(spawnPosZmin, spawnPosZmax));
-        Instantiate(enemyPrefabs[enemyIndex], spawnPost,
-            enemyPrefabs[enemyIndex].transform.rotation);
+        int enemyIndex = 0;
+        Vector3 spawnPost = new Vector3(Random.Range(spawnRangeXmin, spawnRangeXmax), Random.Range(3, 4), Random.Range(spawnPosZmin, spawnPosZmax));
+        Instantiate(enemyPrefabs[enemyIndex], spawnPost, enemyPrefabs[enemyIndex].transform.rotation);
+        enemyTotal++;
+        if (enemyTotal >= 30) {
+            CancelInvoke();
+        }
     }
 }

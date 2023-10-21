@@ -5,10 +5,10 @@ using UnityEngine;
 public class SpawnManagerBig : MonoBehaviour
 {
     public GameObject[] enemySmallPrefabs;
-    private float spawnRangeXmax = -40;
+    private float spawnRangeXmax = -2;
     private float spawnRangeXmin = -10;
-    private float spawnPosZmax = -12;
-    private float spawnPosZmin = -8;
+    private float spawnPosZmax = 9;
+    private float spawnPosZmin = 0;
     private float startDelay = 3;
     private float spawnInterval = 1.5f;
     //public int animalIndex
@@ -27,8 +27,8 @@ public class SpawnManagerBig : MonoBehaviour
     }
     void SpawnRandomEnemySmall()
     {
-        int enemyIndex = Random.Range(0, enemySmallPrefabs.Length);
-        Vector3 spawnPost = new Vector3(Random.Range(spawnRangeXmin, spawnRangeXmax), Random.Range(3,4), Random.Range(spawnPosZmin, spawnPosZmax));
+        int enemyIndex = 0;
+        Vector3 spawnPost = new Vector3(Random.Range(spawnRangeXmin, spawnRangeXmax), Random.Range(2,5), Random.Range(spawnPosZmin, spawnPosZmax));
         Instantiate(enemySmallPrefabs[enemyIndex], spawnPost,
             enemySmallPrefabs[enemyIndex].transform.rotation);
     }

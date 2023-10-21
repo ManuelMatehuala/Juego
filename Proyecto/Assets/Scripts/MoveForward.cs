@@ -22,7 +22,7 @@ public class MoveForward : MonoBehaviour
             transform.LookAt(player);
 
             // Mueve el objeto hacia adelante
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            transform.Translate(new Vector3(0,0,0) * speed * Time.deltaTime);
         }
     }
     //void LateUpdate()
