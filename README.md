@@ -15,7 +15,7 @@ En la UTNG, un ciberataque devastador pone en riesgo a los estudiantes y sus dat
 ## Enlace en Jira
 https://bytebattles.atlassian.net/jira/software/projects/SCRUM/boards/1
 
-## Curso
+## Curso Unity 3D
 - Unidad 2
   - [Lección 2](https://github.com/ManuelMatehuala/Juego/tree/Principal/Curso/Leccion2/Create%20with%20Code)
 - Unidad 3
