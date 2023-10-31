@@ -17,8 +17,7 @@ https://bytebattles.atlassian.net/jira/software/projects/SCRUM/boards/1
 
 ## Curso
 - Unidad 2
-  - [Lección 2](/carpeta_principal/Subcarpeta1)
-    - [Desafío](/carpeta_principal/Subcarpeta1/ArchivoA.txt)
+  - [Lección 2](Curso/Leccion2/Create with Code)
 - Unidad 3
   - [Lección 3](/carpeta_principal/Subcarpeta1)
     - [Desafío](/carpeta_principal/Subcarpeta1/ArchivoA.txt)
