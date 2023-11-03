@@ -22,7 +22,7 @@ https://bytebattles.atlassian.net/jira/software/projects/SCRUM/boards/1
   - [Lección 3](https://github.com/ManuelMatehuala/Juego/tree/Principal/Curso/Leccion3/Create%20with%20Code)
     - [Desafío (vídeo)](https://drive.google.com/file/d/1-V4ftlfv1kUMZZlffayZjnDWnAK7RjGa/view?usp=sharing)
 - Unidad 4
-  - [Lección 4](https://github.com/ManuelMatehuala/Juego/tree/Principal/Curso/Leccion_4/Create%20with%20Code/Desafio)
+  - [Lección 4](https://github.com/ManuelMatehuala/Juego/tree/Principal/Curso/Leccion4_v3/Create%20with%20Code)
     - [Desafío (vídeo)](https://drive.google.com/file/d/1Az8Bwkysk6bJdFBzrSYEsaNC7wBmwFxZ/view?usp=sharing)
 - Unidad 5
   - [Lección 5](https://github.com/ManuelMatehuala/Juego/tree/Principal/Curso/Leccion5/Create%20with%20Code)
