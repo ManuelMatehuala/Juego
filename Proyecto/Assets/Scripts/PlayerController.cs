@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!UIController.instance.pauseScreen.activeInHierarchy)
+        {
         //moveInput.x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         //moveInput.z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Salto del Jugador
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             moveInput.y = jumpPower;
         }
@@ -114,12 +116,12 @@ public class PlayerController : MonoBehaviour
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));
 
         // Shooting
-        if(Input.GetMouseButtonDown(0) && activeGun.fireCounter <= 0)
+        if (Input.GetMouseButtonDown(0) && activeGun.fireCounter <= 0)
         {
             RaycastHit hit;
-            if(Physics.Raycast(camTrans.position, camTrans.forward, out hit, 50f))
+            if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, 50f))
             {
-                if(Vector3.Distance(camTrans.position, hit.point) > 2f)
+                if (Vector3.Distance(camTrans.position, hit.point) > 2f)
                 {
                     firePoint.LookAt(hit.point);
                 }
@@ -132,28 +134,29 @@ public class PlayerController : MonoBehaviour
             FireShot();
         }
 
-        if(Input.GetMouseButton(0) && activeGun.canAutoFire)
+        if (Input.GetMouseButton(0) && activeGun.canAutoFire)
         {
-            if(activeGun.fireCounter <= 0)
+            if (activeGun.fireCounter <= 0)
             {
                 FireShot();
             }
         }
 
-        if(Input.GetButtonDown("Switch Gun"))
+        if (Input.GetButtonDown("Switch Gun"))
         {
             SwitchGun();
         }
 
-        if(Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
             CameraController.instance.ZoomIn(activeGun.zoomAmount);
         }
 
-        if(Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
         {
             gunHolder.position = Vector3.MoveTowards(gunHolder.position, adsPoint.position, adsSpeed * Time.deltaTime);
-        } else
+        }
+        else
         {
             gunHolder.localPosition = Vector3.MoveTowards(gunHolder.localPosition, gunStartPosition, adsSpeed * Time.deltaTime);
         }
@@ -180,6 +183,7 @@ public class PlayerController : MonoBehaviour
         {
             CameraController.instance.ZoomOut();
         }
+    }
     }
 
     public void FireShot()

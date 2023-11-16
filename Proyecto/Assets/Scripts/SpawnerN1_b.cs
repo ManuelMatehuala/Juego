@@ -20,4 +20,9 @@ public class SpawnerN1_b : MonoBehaviour
             yield return new WaitForSeconds(10);
         }
     }
+
+    public int getPrefabs(int cantidadDePrefabs)
+    {
+        return cantidadDePrefabs;
+    }
 }
