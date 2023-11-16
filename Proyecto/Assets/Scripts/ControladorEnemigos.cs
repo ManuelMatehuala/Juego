@@ -20,30 +20,42 @@ public class ControladorEnemigos : MonoBehaviour
         // Mueve el enemigo hacia la dirección aleatoria
         transform.Translate(direccion.normalized * velocidad * Time.deltaTime);
 
-        // Gira hacia la dirección del jugador
-        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
+        // Busca el objeto del jugador por etiqueta
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        // Verifica si se encontró el objeto del jugador antes de intentar acceder a su transform
+        if (player != null)
+        {
+            // Gira hacia la dirección del jugador
+            transform.LookAt(player.transform);
+        }
     }
-    //private void LateUpdate()
-    //{
-    //    // Gira hacia la dirección del jugador
-    //    transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
-    //}
+
     private void OnCollisionEnter(Collision collision)
     {
-
         if (collision.collider.tag != "Player")
         {
-            //Debug.Log("Choco con otro");
             // Si colisiona con un objeto que no es el jugador, cambia la dirección de manera aleatoria
             direccion = Random.insideUnitSphere;
             direccion.y = 0;
             transform.Translate(direccion.normalized * velocidad * Time.deltaTime);
-            transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
+
+            // Busca el objeto del jugador por etiqueta
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+            // Verifica si se encontró el objeto del jugador antes de intentar acceder a su transform
+            if (player != null)
+            {
+                // Gira hacia la dirección del jugador
+                transform.LookAt(player.transform);
+            }
         }
         else
         {
-            //Aqui se restaria vida
+            // Aquí se restaría vida
             Debug.Log("Choco con el jugador");
+            PlayerHealthController.instance.DamagePlayer(5);
         }
     }
 }
+
