@@ -31,7 +31,11 @@ public class VictoryScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-
+    public void LevelDos()
+    {
+        SceneManager.LoadScene("Level2");
+        Time.timeScale = 1f;
+    }
     public IEnumerator ShowObjectsCo()
     {
         yield return new WaitForSeconds(timeBetweenShowing);

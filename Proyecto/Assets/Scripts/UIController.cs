@@ -10,6 +10,8 @@ public class UIController : MonoBehaviour
     public static UIController instance;
     public Slider sliderHealth;
     public TextMeshProUGUI textHealth;
+    public Slider sliderHealthEnemy;
+    public TextMeshProUGUI textHealthenemy;
     public TextMeshProUGUI ammoText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timeText;

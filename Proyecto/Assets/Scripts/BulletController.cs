@@ -31,9 +31,21 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.tag.Equals("enemy"))
         {
             Destroy(other.gameObject);
+        }
+        else if (other.gameObject.tag.Equals("enemyDos"))
+        {
+            //Destroy(other.gameObject);
+            Debug.Log("dio enemigo");
+            EnemyLifeController.instance.DamagePlayer(5);
+        }
+        else if (other.gameObject.tag.Equals("ProyectilEnemy")) {
+            Debug.Log("Esfera Destruida");
+            Destroy(other.gameObject);
+            //Sumar punto
+            GameManager.instance.AddScore(1);
         }
 
         Destroy(gameObject);
