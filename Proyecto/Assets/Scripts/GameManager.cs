@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public float powerupSpawnInterval = 10f;
 
     private int score = 0;
+    private bool gameEnded = false;
+    private int currentLevel = 1;
 
     private void Awake()
     {
@@ -58,7 +60,10 @@ public class GameManager : MonoBehaviour
     public IEnumerator PlayerDiedCo()
     {
         yield return new WaitForSeconds(waitAfterDying);
-        SceneManager.LoadScene("GameOver");
+        if (!gameEnded)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void PauseUnpause()
@@ -81,6 +86,49 @@ public class GameManager : MonoBehaviour
     {
         score += value;
         scoreText.text = "Puntuación: " + score;
+    }
+
+
+    public void EndGame()
+    {
+        // Evitar que se llame a EndGame múltiples veces
+        if (!gameEnded)
+        {
+            gameEnded = true;
+
+            // Guardar el puntaje y el nivel en MongoDB al finalizar el tiempo
+            int currentLevel = GetCurrentLevel();
+            DBMongo.instance.SaveScore(PlayerPrefs.GetString("PlayerName", ""), score, currentLevel);
+
+            SceneManager.LoadScene("Victory");
+        }
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public int GetCurrentLevel()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "Test")
+        {
+            return 1;
+        }
+        else if (currentSceneName == "Level2")
+        {
+            return 2;
+        }
+
+        return 1;
+    }
+
+
+    public void SetCurrentLevel(int level)
+    {
+        currentLevel = level;
     }
 }
 

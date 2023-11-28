@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0de6e1f62c4371b49b158a4abda9ae5f
+guid: e51a1dc56e10cdb4ba0d463643a7312c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,62 +8,62 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ch50_body
-    second: {fileID: 2100000, guid: 2f07e68f9bcf2554f9a46b13444635f8, type: 2}
+    second: {fileID: 2100000, guid: 4b7ffa15ea14c274caa62b5bc2b5724d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ch50_body1
-    second: {fileID: 2100000, guid: d4d7fa837442db847b54d643339d4c94, type: 2}
+    second: {fileID: 2100000, guid: 139a12fafd967e84086448913266e409, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1001_Diffuse
-    second: {fileID: 2800000, guid: 4fb4da69cfc53c04bbc405517a7dafcb, type: 3}
+    second: {fileID: 2800000, guid: 1e822912224139042bf56f3bb64749a3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1001_Emissive
-    second: {fileID: 2800000, guid: 5ba2b86a111e0454b9233945a069e33f, type: 3}
+    second: {fileID: 2800000, guid: e919b0a0c067a774da48ff3775346f59, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1001_Glossiness
-    second: {fileID: 2800000, guid: 7b985203e1963654db1c6d9d8d599b62, type: 3}
+    second: {fileID: 2800000, guid: f2242fd574a8d574f9eb29bc7a4f2319, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1001_Normal
-    second: {fileID: 2800000, guid: bb8f814f89157f24abbce12e13276661, type: 3}
+    second: {fileID: 2800000, guid: 0300c33a88e3d14448603ef02a757e72, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1001_Specular
-    second: {fileID: 2800000, guid: 8ae61928fc8e0d94a993bf35db4a33a4, type: 3}
+    second: {fileID: 2800000, guid: 1c1d1975f5284824b877cbf95426686c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1002_Diffuse
-    second: {fileID: 2800000, guid: ef85fb2cec443a540aaf41bc80c8a060, type: 3}
+    second: {fileID: 2800000, guid: 91c6a7a6d923de64dbbb121a5d5b745b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1002_Emissive
-    second: {fileID: 2800000, guid: 5c6e6081ca395b149bd57a8b1ec74a0b, type: 3}
+    second: {fileID: 2800000, guid: 795ca4f269c7a1f4597063d6950ab251, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1002_Glossiness
-    second: {fileID: 2800000, guid: 6e8c208c5fd5659459377d273e83c542, type: 3}
+    second: {fileID: 2800000, guid: 9b9c7f6286040a34384b2f8525599566, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1002_Normal
-    second: {fileID: 2800000, guid: 00e424865975d1b4f8a60818163bd24a, type: 3}
+    second: {fileID: 2800000, guid: e0744c490e3067542b5b331051afdeff, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch50_1002_Specular
-    second: {fileID: 2800000, guid: 29c89a8c2ae812f42a999a9c43e1ba44, type: 3}
+    second: {fileID: 2800000, guid: a4576a442f62b8f46b809aafcc9ee0aa, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -97,7 +97,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
