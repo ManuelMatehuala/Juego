@@ -25,24 +25,62 @@ public class UIController : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        // Desactivar interacciï¿½n tï¿½ctil en el inicio del juego
+        sliderHealth.interactable = false;
+        //sliderHealthEnemy.interactable = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        //if (tiempoRestante > 0)
+        //{
+        //    tiempoRestante -= Time.deltaTime;
+
+        //    // Convertir tiempoRestante a minutos y segundos
+        //    int minutos = Mathf.FloorToInt(tiempoRestante / 60);
+        //    int segundos = Mathf.FloorToInt(tiempoRestante % 60);
+
+        //    // Actualizar el texto del cronï¿½metro
+        //    timeText.text = minutos.ToString("00") + ":" + segundos.ToString("00");
+        //}
+        //else
+        //{
+        //    timeText.text = "00:00";
+        //    SceneManager.LoadScene("Victory");
+        //}
+
         if (tiempoRestante > 0)
         {
             tiempoRestante -= Time.deltaTime;
 
-            // Convertir tiempoRestante a minutos y segundos
-            int minutos = Mathf.FloorToInt(tiempoRestante / 60);
-            int segundos = Mathf.FloorToInt(tiempoRestante % 60);
+            // Verificar si el tiempoRestante es menor o igual a cero
+            if (tiempoRestante <= 0)
+            {
+                tiempoRestante = 0; // Establecer el tiempoRestante a cero
+                timeText.text = "00:00";
 
-            // Actualizar el texto del cronómetro
+            // Actualizar el texto del cronï¿½metro
             timeText.text = minutos.ToString("00") + ":" + segundos.ToString("00");
         }
         else
         {
             timeText.text = "00:00";
             //SceneManager.LoadScene("Victory");
+                // Llamar a la funciï¿½n EndGame solo al finalizar el tiempo
+                GameManager.instance.EndGame();
+            }
+            else
+            {
+                // Convertir tiempoRestante a minutos y segundos
+                int minutos = Mathf.FloorToInt(tiempoRestante / 60);
+                int segundos = Mathf.FloorToInt(tiempoRestante % 60);
+
+                // Actualizar el texto del cronï¿½metro
+                timeText.text = minutos.ToString("00") + ":" + segundos.ToString("00");
+            }
         }
     }
 }

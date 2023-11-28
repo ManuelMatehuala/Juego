@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("Form");
         Time.timeScale = 1f;
     }
 
@@ -42,5 +42,10 @@ public class MainMenu : MonoBehaviour
     public void Story()
     {
         SceneManager.LoadScene("Story");
+    }
+
+    public void Ranking()
+    {
+        SceneManager.LoadScene("Ranking");
     }
 }
