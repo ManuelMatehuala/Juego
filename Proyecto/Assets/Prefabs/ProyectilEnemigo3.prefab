@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7486594187556233907}
   - component: {fileID: 2191134880622423911}
   m_Layer: 0
-  m_Name: ProyectilEnemigo2 1
+  m_Name: ProyectilEnemigo3
   m_TagString: ProyectilEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

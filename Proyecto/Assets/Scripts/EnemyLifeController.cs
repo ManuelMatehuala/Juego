@@ -10,7 +10,9 @@ public class EnemyLifeController : MonoBehaviour
     private float invincCounter;
     public float invincibleLength;
     private int score = 0;
-    public Animator animator;
+    public GameObject prefabEnemy;
+    public float life = 100f;
+    //public Animator animator;
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,6 +25,7 @@ public class EnemyLifeController : MonoBehaviour
         UIController.instance.sliderHealthEnemy.maxValue = maxHealth;
         UIController.instance.sliderHealthEnemy.value = currentHealth;
         UIController.instance.textHealthenemy.text = "Vida: " + currentHealth + "/" + maxHealth;
+        
     }
     // Update is called once per frame
     void Update()
@@ -41,12 +44,14 @@ public class EnemyLifeController : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                gameObject.SetActive(false);
                 currentHealth = 0;
-                Destroy(gameObject);
                 DestruirObjetosPorTag();
-                animator.SetBool("Active", true);
-                animator.SetFloat("Life", 100f);
+                Instantiate(prefabEnemy, new Vector3(-53.21f, 6.615827f, -9.53f), transform.rotation);
+                Destroy(gameObject);
+                //enemyThreeController.activeRoutine();
+                //animator.SetFloat("Life", 100f);
+
+                currentHealth = maxHealth;
             }
             invincCounter = invincibleLength;
             UIController.instance.sliderHealthEnemy.value = currentHealth;
@@ -66,4 +71,5 @@ public class EnemyLifeController : MonoBehaviour
     {
         return score;
     }
+
 }

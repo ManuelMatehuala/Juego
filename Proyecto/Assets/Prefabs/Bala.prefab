@@ -125,6 +125,7 @@ MonoBehaviour:
   lifeTime: 5
   theRB: {fileID: 4203985809987405037}
   impactEffect: {fileID: 4286756206847215336, guid: 0d5a148515cf11b4fb385f747d30006a, type: 3}
+  miObjeto: {fileID: 919132149155446097, guid: 0de6e1f62c4371b49b158a4abda9ae5f, type: 3}
 --- !u!54 &4203985809987405037
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ TagManager:
   - Bala
   - enemyDos
   - ProyectilEnemy
+  - EnemyThree
+  - ProyectilEnemy3
   layers:
   - Default
   - TransparentFX

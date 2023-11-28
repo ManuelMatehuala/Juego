@@ -42,7 +42,7 @@ public class UIController : MonoBehaviour
         else
         {
             timeText.text = "00:00";
-            SceneManager.LoadScene("Victory");
+            //SceneManager.LoadScene("Victory");
         }
     }
 }
