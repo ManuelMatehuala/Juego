@@ -5,48 +5,41 @@ using UnityEngine;
 
 public class TopPlayersMenu : MonoBehaviour
 {
+    public static TopPlayersMenu instance;
     public TextMeshProUGUI topPlayersText;
-
+    private string message;
+    private int level;
     // Start is called before the first frame update
     void Start()
     {
-        DisplayTopPlayers(1); // Mostrar los mejores jugadores para el nivel 1
-        DisplayTopPlayers(2); // Mostrar los mejores jugadores para el nivel 2
+        instance = this;
+        DisplayTopPlayers();
     }
 
-    void DisplayTopPlayers(int level)
+    public void ProcesarScores(string cadena)
     {
-        // Obtener los mejores jugadores para el nivel dado
-        List<PlayerData> topPlayers = DBMongo.instance.GetTopPlayers(level);
-
-        // Construir el mensaje
-        string message = $"Nivel {level}:\n";
-        foreach (var player in topPlayers)
-        {
-            int levelScore = 0;
-
-            // Evaluar el nivel para determinar qué campo utilizar
-            if (level == 1)
-            {
-                levelScore = player.Level1;
-            }
-            else if (level == 2)
-            {
-                levelScore = player.Level2;
-            }
-
-            // Mostrar el mensaje
-            message += $"{player.Name}: {levelScore} puntos\n";
-        }
-
         // Mostrar el mensaje
         if (topPlayersText != null)
         {
-            topPlayersText.text += message + "\n";
+            topPlayersText.text =cadena;
         }
         else
         {
             Debug.LogError("No se ha asignado el TextMeshProUGUI para mostrar los mejores jugadores en el Inspector.");
         }
+    }
+
+    void DisplayTopPlayers()
+    {
+        // Obtener los mejores jugadores para el nivel dado
+        if (DBMongo.instance != null)
+        {
+            System.Threading.Tasks.Task task = DBMongo.instance.GetScores();
+        }
+        else {
+            Debug.Log("DBMongo es nulo");
+        }
+
+
     }
 }

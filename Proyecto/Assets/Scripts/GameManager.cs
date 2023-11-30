@@ -68,18 +68,39 @@ public class GameManager : MonoBehaviour
 
     public void PauseUnpause()
     {
-        if (UIController.instance.pauseScreen.activeInHierarchy)
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "Test")
         {
-            UIController.instance.pauseScreen.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1f;
+            if (UIController.instance.pauseScreen.activeInHierarchy)
+            {
+                UIController.instance.pauseScreen.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                UIController.instance.pauseScreen.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0f;
+            }
         }
-        else
+        else if (currentSceneName == "Level2")
         {
-            UIController.instance.pauseScreen.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0f;
+            if (UIControllerLevel2.instance.pauseScreen.activeInHierarchy)
+            {
+                UIControllerLevel2.instance.pauseScreen.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                UIControllerLevel2.instance.pauseScreen.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0f;
+            }
         }
+
+
     }
 
     public void AddScore(int value)

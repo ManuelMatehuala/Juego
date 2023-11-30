@@ -22,9 +22,9 @@ public class EnemyLifeController : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        UIController.instance.sliderHealthEnemy.maxValue = maxHealth;
-        UIController.instance.sliderHealthEnemy.value = currentHealth;
-        UIController.instance.textHealthenemy.text = "Vida: " + currentHealth + "/" + maxHealth;
+        UIControllerLevel2.instance.sliderHealthEnemy.maxValue = maxHealth;
+        UIControllerLevel2.instance.sliderHealthEnemy.value = currentHealth;
+        UIControllerLevel2.instance.textHealthenemy.text = "Vida: " + currentHealth + "/" + maxHealth;
         
     }
     // Update is called once per frame
@@ -54,8 +54,8 @@ public class EnemyLifeController : MonoBehaviour
                 currentHealth = maxHealth;
             }
             invincCounter = invincibleLength;
-            UIController.instance.sliderHealthEnemy.value = currentHealth;
-            UIController.instance.textHealthenemy.text = "Vida: " + currentHealth + "/" + maxHealth;
+            UIControllerLevel2.instance.sliderHealthEnemy.value = currentHealth;
+            UIControllerLevel2.instance.textHealthenemy.text = "Vida: " + currentHealth + "/" + maxHealth;
         }
     }
     void DestruirObjetosPorTag()

@@ -15,7 +15,8 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI ammoText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timeText;
-    private float tiempoRestante = 60.0f; // 300 segundos = 5 minutos
+    private float tiempoRestante = 180.0f; // 300 segundos = 5 minutos
+    public TextMeshProUGUI EscudoText;
 
     public GameObject pauseScreen;
 
@@ -35,52 +36,30 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (tiempoRestante > 0)
-        //{
-        //    tiempoRestante -= Time.deltaTime;
-
-        //    // Convertir tiempoRestante a minutos y segundos
-        //    int minutos = Mathf.FloorToInt(tiempoRestante / 60);
-        //    int segundos = Mathf.FloorToInt(tiempoRestante % 60);
-
-        //    // Actualizar el texto del cron�metro
-        //    timeText.text = minutos.ToString("00") + ":" + segundos.ToString("00");
-        //}
-        //else
-        //{
-        //    timeText.text = "00:00";
-        //    SceneManager.LoadScene("Victory");
-        //}
-
         if (tiempoRestante > 0)
         {
             tiempoRestante -= Time.deltaTime;
 
+            // Convertir tiempoRestante a minutos y segundos
+            int minutos = Mathf.FloorToInt(tiempoRestante / 60);
+            int segundos = Mathf.FloorToInt(tiempoRestante % 60);
             // Verificar si el tiempoRestante es menor o igual a cero
             if (tiempoRestante <= 0)
             {
                 tiempoRestante = 0; // Establecer el tiempoRestante a cero
                 timeText.text = "00:00";
-
+            }
             // Actualizar el texto del cron�metro
             timeText.text = minutos.ToString("00") + ":" + segundos.ToString("00");
         }
         else
         {
             timeText.text = "00:00";
-            //SceneManager.LoadScene("Victory");
+            SceneManager.LoadScene("Victory");
                 // Llamar a la funci�n EndGame solo al finalizar el tiempo
                 GameManager.instance.EndGame();
-            }
-            else
-            {
-                // Convertir tiempoRestante a minutos y segundos
-                int minutos = Mathf.FloorToInt(tiempoRestante / 60);
-                int segundos = Mathf.FloorToInt(tiempoRestante % 60);
-
-                // Actualizar el texto del cron�metro
-                timeText.text = minutos.ToString("00") + ":" + segundos.ToString("00");
-            }
         }
     }
 }
+
+

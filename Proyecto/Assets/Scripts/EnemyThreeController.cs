@@ -10,8 +10,8 @@ public class EnemyThreeController : MonoBehaviour
     public Animator animator;
     public Transform player;
     public Transform enemy;
-    private int maxHealth = 100; 
-    private int currentHealth=100;
+    private int maxHealthThree = 100; 
+    private int currentHealthThree=100;
     public float movementSpeed = 10f;
     public float movementRange = -3f;
     public float fireRate = 200f;
@@ -22,10 +22,14 @@ public class EnemyThreeController : MonoBehaviour
     void Start()
     {
         // Obtener el componente Animator
+        maxHealthThree = 100;
+        currentHealthThree = 100;
         animator = GetComponent<Animator>();
         sliderStart();
         animator.SetBool("Active", true);
         activeRoutine();
+        Debug.Log(currentHealthThree);
+        Debug.Log(maxHealthThree);
     }
 
     void Update()
@@ -50,26 +54,28 @@ public class EnemyThreeController : MonoBehaviour
 
     public void sliderStart()
     {
-        currentHealth = maxHealth;
-        UIController.instance.sliderHealthEnemy.maxValue = maxHealth;
-        UIController.instance.sliderHealthEnemy.value = currentHealth;
-        UIController.instance.textHealthenemy.text = "Vida: " + currentHealth + "/" + maxHealth;
+        currentHealthThree = maxHealthThree;
+        UIControllerLevel2.instance.sliderHealthEnemy.maxValue = maxHealthThree;
+        UIControllerLevel2.instance.sliderHealthEnemy.value = currentHealthThree;
+        UIControllerLevel2.instance.textHealthenemy.text = "Vida: " + currentHealthThree + "/" + maxHealthThree;
     }
     public void DamagePlayerThree(int damageAmount)
     {
+        Debug.Log(damageAmount);
+        Debug.Log(currentHealthThree);
         if (invincCounter <= 0)
         {
-            currentHealth -= damageAmount;
+            currentHealthThree -= damageAmount;
 
-            if (currentHealth <= 0)
+            if (currentHealthThree <= 0)
             {
                 DestruirObjetosPorTag();
                 // Destruye el objeto después de que termine la animación
-                SceneManager.LoadScene("Victory");
+                GameManager.instance.EndGame();
             }
             invincCounter = invincibleLength;
-            UIController.instance.sliderHealthEnemy.value = currentHealth;
-            UIController.instance.textHealthenemy.text = "Vida: " + currentHealth + "/" + maxHealth;
+            UIControllerLevel2.instance.sliderHealthEnemy.value = currentHealthThree;
+            UIControllerLevel2.instance.textHealthenemy.text = "Vida: " + currentHealthThree + "/" + maxHealthThree;
         }
     }
 
