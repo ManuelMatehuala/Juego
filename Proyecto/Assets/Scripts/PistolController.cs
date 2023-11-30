@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PistolController : MonoBehaviour
 {
@@ -38,6 +39,16 @@ public class PistolController : MonoBehaviour
     {
         currentAmmo += pickupAmount;
 
-        UIController.instance.ammoText.text = "Balas: " + currentAmmo;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "Test")
+        {
+            UIController.instance.ammoText.text = "Balas: " + currentAmmo;
+        }
+        else if (currentSceneName == "Level2")
+        {
+            UIControllerLevel2.instance.ammoText.text = "Balas: " + currentAmmo;
+        }
+
     }
 }

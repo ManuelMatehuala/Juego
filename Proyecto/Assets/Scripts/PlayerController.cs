@@ -96,7 +96,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!UIController.instance.pauseScreen.activeInHierarchy)
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        bool uiControl = true;
+        if (currentSceneName == "Test")
+        {
+            uiControl = !UIController.instance.pauseScreen.activeInHierarchy;
+        }
+        else if (currentSceneName == "Level2")
+        {
+            uiControl = !UIControllerLevel2.instance.pauseScreen.activeInHierarchy;
+        }
+
+        if (uiControl)
         {
 
             // Verificar si estamos en Android
@@ -340,7 +351,17 @@ public class PlayerController : MonoBehaviour
             activeGun.currentAmmo--;
             Instantiate(activeGun.bullet, firePoint.position, firePoint.rotation);
             activeGun.fireCounter = activeGun.fireRate;
-            UIController.instance.ammoText.text = "Balas: " + activeGun.currentAmmo;
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            if (currentSceneName == "Test")
+            {
+                UIController.instance.ammoText.text = "Balas: " + activeGun.currentAmmo;
+            }
+            else if (currentSceneName == "Level2")
+            {
+                UIControllerLevel2.instance.ammoText.text = "Balas: " + activeGun.currentAmmo;
+            }
+            
         }
     }
 
@@ -357,8 +378,16 @@ public class PlayerController : MonoBehaviour
 
         activeGun = allGuns[currentGun];
         activeGun.gameObject.SetActive(true);
+        string currentSceneName = SceneManager.GetActiveScene().name;
 
-        UIController.instance.ammoText.text = "Balas: " + activeGun.currentAmmo;
+        if (currentSceneName == "Test")
+        {
+            UIController.instance.ammoText.text = "Balas: " + activeGun.currentAmmo;
+        }
+        else if (currentSceneName == "Level2")
+        {
+            UIControllerLevel2.instance.ammoText.text = "Balas: " + activeGun.currentAmmo;
+        }
     }
 
     public void MainMenu()
