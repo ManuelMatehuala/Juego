@@ -15,7 +15,6 @@ En la UTNG, un ciberataque devastador pone en riesgo a los estudiantes y sus dat
 ## Controles del juego
 •	![Captura de pantalla 2023-12-01 145639](https://github.com/ManuelMatehuala/Juego/assets/88950498/49bdf3fa-6362-44d3-b10c-0b5fa70e6b2a)
 
-
 ## Enlace en Jira
 https://bytebattles.atlassian.net/jira/software/projects/SCRUM/boards/1
 
