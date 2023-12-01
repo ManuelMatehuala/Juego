@@ -386,7 +386,7 @@ PlayerSettings:
     m_DynamicBatching: 0
   - m_BuildTarget: WebGL
     m_StaticBatching: 0
-    m_DynamicBatching: 0
+    m_DynamicBatching: 1
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs:
   - m_BuildTarget: MacStandaloneSupport
@@ -464,7 +464,10 @@ PlayerSettings:
   - m_BuildTarget: tvOS
     m_EncodingQuality: 1
   m_BuildTargetGroupLightmapSettings: []
-  m_BuildTargetGroupLoadStoreDebugModeSettings: []
+  m_BuildTargetGroupLoadStoreDebugModeSettings:
+  - m_BuildTarget: WebGL
+    m_DebugModeEnabled: 0
+    m_IsEditorOnly: 1
   m_BuildTargetNormalMapEncoding:
   - m_BuildTarget: Android
     m_Encoding: 1
@@ -751,8 +754,10 @@ PlayerSettings:
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
-  il2cppCompilerConfiguration: {}
-  il2cppCodeGeneration: {}
+  il2cppCompilerConfiguration:
+    WebGL: 1
+  il2cppCodeGeneration:
+    WebGL: 0
   managedStrippingLevel:
     EmbeddedLinux: 1
     GameCoreScarlett: 1
