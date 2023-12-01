@@ -35,6 +35,6 @@ https://bytebattles.atlassian.net/jira/software/projects/SCRUM/boards/1
 - APK Juego
   - (https://drive.google.com/file/d/13PpZ8N0BD1uZA93JyWqMxrkds2lZrjQ4/view?usp=sharing)
 - WEB
-  - (https://github.com/ManuelMatehuala/Juego/tree/Principal/Curso/Leccion3/Create%20with%20Code)
+  - (https://github.com/ManuelMatehuala/Juego/tree/Principal/Web)
 - PC
-  - (https://github.com/ManuelMatehuala/Juego/tree/Principal/Curso/Leccion4_v3/Create%20with%20Code)
+  - (https://github.com/ManuelMatehuala/Juego/tree/Principal/PC)
